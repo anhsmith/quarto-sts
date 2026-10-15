@@ -1,0 +1,4 @@
+project:
+  title: "quarto-sts"
+  render:
+    - example.qmd

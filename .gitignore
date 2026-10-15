@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+/.quarto/
+**/*.quarto_ipynb
+
+# rendered example deck
+example.html
+example_files/
+.httr-oauth
+.quarto

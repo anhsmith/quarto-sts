@@ -1,0 +1,38 @@
+---
+title: "Example deck<br>for the sts-revealjs format"
+subtitle: "Test bed for theme changes"
+author: "Dr Adam N. H. Smith"
+institute: "Director, Sea Through Science Ltd"
+date: 2026-10-16
+format: sts-revealjs
+---
+
+## Default slide
+
+- Bullet one
+- Bullet two
+  - Nested bullet
+
+::: notes
+Speaker notes.
+:::
+
+## Right-aligned heading {.h2right}
+
+- `.h2right` class
+
+## White text on a dark background {#all-white background-color="#1e3a5f"}
+
+- `#all-white`
+
+## White text, right-aligned {#all-white-right background-color="#1e3a5f"}
+
+- `#all-white-right`
+
+## White text, 15% left margin {#all-white-fifteen background-color="#1e3a5f"}
+
+- `#all-white-fifteen`
+
+## Dark text on a light background {#all-dark background-color="#dbeafe"}
+
+- `#all-dark`
