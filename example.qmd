@@ -7,6 +7,8 @@ date: 2026-10-16
 format: sts-revealjs
 ---
 
+# Section slide
+
 ## Default slide
 
 - Bullet one
@@ -16,6 +18,14 @@ format: sts-revealjs
 ::: notes
 Speaker notes.
 :::
+
+## Table
+
+| Milestone | Deliverable | Due |
+|----|-------------|-----|
+| MS1 | First deliverable | 30 Nov 2026 |
+| MS2 | Second deliverable | 30 Jun 2027 |
+| MS3 | Third deliverable | 15 Dec 2027 |
 
 ## Right-aligned heading {.h2right}
 
