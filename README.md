@@ -1,6 +1,6 @@
 # quarto-sts
 
-Quarto extension holding the Sea Through Science revealjs format: theme, logo, title-slide layout and transitions.
+Quarto extension holding two Sea Through Science formats: `sts-revealjs` for slide decks (theme, logo, title-slide layout and transitions) and `sts-typst` for PDF reports (cover page, contents page, table style and reference list).
 
 ## Installation
 
@@ -17,6 +17,34 @@ format: sts-revealjs
 A background video on the title slide is set per deck, with `title-slide-attributes`.
 
 Level-1 headings (`#`) become section slides with a navy background. To use another colour in one deck, set `sts-section-bg: "#027DBF"` in its YAML; to change one section slide, give its heading a `background-color` attribute.
+
+## Reports
+
+```yaml
+title: "Survey Report"
+subtitle: "Stereo-BRUV survey of Northland 2026"
+author: "Dr Adam N. H. Smith (Director)"
+date: today
+bibliography: ../library.bib
+format: sts-typst
+params:
+  client: "Fisheries New Zealand"
+  cover: "img/cover.png"
+  tocimage: "img/toc.jpg"
+```
+
+The cover page shows the title, subtitle, `cover` image, author, Sea Through Science mark, client and date, and the second page shows the contents and the `tocimage` image. The paths to both images are relative to the report. The mark is copied beside the report at render time.
+
+Citations are processed by Pandoc (`citeproc: true`) with the Elsevier Vancouver style, rather than by Typst. Pandoc reads a bibliography outside the project folder, such as `../library.bib`, which Typst does not read, and accepts the `year` fields that Typst fails to parse. End the report with:
+
+```markdown
+# References {.unnumbered}
+
+::: {#refs}
+:::
+```
+
+The template sets the font to Source Sans Pro; Typst falls back to its default font, with a warning, when Source Sans Pro is not installed.
 
 ## Design
 
