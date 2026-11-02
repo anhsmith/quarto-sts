@@ -33,7 +33,9 @@ params:
   tocimage: "img/toc.jpg"
 ```
 
-The cover page shows the title, subtitle, `cover` image, author, Sea Through Science mark, client and date, and the second page shows the contents and the `tocimage` image. The paths to both images are relative to the report. The mark is copied beside the report at render time.
+The cover page shows the title, subtitle, `cover` image, author, Sea Through Science lockup, client and date, and the second page shows the contents and the `tocimage` image. The paths to both images are relative to the report. The lockup is embedded in the template, so no logo file is needed in the project or copied beside the report.
+
+The logo files in the extension are copies of the master files in `sea-through-science/logo/svg`. After the logos change, run `Rscript sync-logos.R` and then `Rscript make-embedded-scss.R` from the repository root, with `sea-through-science` cloned beside this repository.
 
 Citations are processed by Pandoc (`citeproc: true`) with the Elsevier Vancouver style, rather than by Typst. Pandoc reads a bibliography outside the project folder, such as `../library.bib`, which Typst does not read, and accepts the `year` fields that Typst fails to parse. End the report with:
 
