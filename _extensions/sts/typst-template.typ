@@ -71,14 +71,37 @@
   // Make figure captions italic
   show figure.caption: emph
 
-  // Colour links
-  show link: set text(fill: blue)
-  show link: underline
+  // Extra space above tables, where the caption sits above the table, so that
+  // the caption stands apart from a figure or text before it
+  show figure.where(kind: "quarto-float-tbl"): set block(above: 1.8em)
+
+  // Colour links, except internal links such as contents entries
+  show link: it => if type(it.dest) == location {
+    it
+  } else {
+    underline(text(fill: blue, it))
+  }
 
   show heading.where(level: 1): it => {
     colbreak(weak: true)
+    [#metadata(none)<sts-heading-start>]
     it
     v(0.5em)
+  }
+
+  // A level 1 heading records its location before the break above, so its
+  // contents entry takes the page and link from the marker after the break
+  show outline.entry.where(level: 1): it => context {
+    let start = query(
+      selector(<sts-heading-start>).after(it.element.location())
+    ).first().location()
+    link(
+      start,
+      it.indented(
+        it.prefix(),
+        [#it.body() #box(width: 1fr, it.fill) #sym.wj #numbering("1", ..counter(page).at(start))],
+      ),
+    )
   }
 
   // Cover page
