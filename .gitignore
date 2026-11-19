@@ -9,5 +9,8 @@
 # rendered example deck
 example.html
 example_files/
+
+# rendered example quotation
+example-quotation.pdf
 .httr-oauth
 .quarto

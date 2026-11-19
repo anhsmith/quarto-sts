@@ -2,3 +2,4 @@ project:
   title: "quarto-sts"
   render:
     - example.qmd
+    - example-quotation.qmd

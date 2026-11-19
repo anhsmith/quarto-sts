@@ -1,0 +1,54 @@
+---
+title: "Indicative quotation"
+subtitle: "Project title"
+client: "Client name"
+purpose: "purpose of the estimate"
+date: today
+format: sts-quotation-typst
+fees:
+  currency: NZD
+  symbol: "$"
+  tax: "excluding GST"
+  rate: "x,xxx"
+  options: [Minimum, Recommended]
+  packages:
+    - name: "A — Package name"
+      description: "Work included in the package, and what it delivers."
+      days: [2, 3]
+    - name: "B — Package name"
+      description: "Work included in the package, and what it delivers."
+      days: [5, 8]
+    - name: "C — Package name"
+      description: "Work included in the package, and what it delivers."
+      days: [3, 3]
+  note: "Note on work that can be added at the daily rate."
+---
+
+One or two sentences on the options offered, such as a minimum and a recommended scope at the same daily rate.
+
+# Scope and method
+
+One paragraph on the questions the work would answer, the data it would use, and the methods it would apply.
+
+# Packages and fees
+
+::: {.fees}
+:::
+
+# Deliverables
+
+- Deliverable, with its form and length.
+- Deliverable, with its form and length.
+- Deliverable, with its form and length.
+
+# Schedule
+
+Duration of each option, the number of days per week, and how the start date is agreed.
+
+# Assumptions and terms
+
+- Inputs to be supplied by the client, and when.
+- Work excluded from the quotation. Work beyond this scope would be quoted at the daily rate.
+- Meetings included, and whether delivery is remote.
+- Indicative and non-binding, to be reconfirmed on award. Rates may be revised if work begins more than twelve months after the date of this quotation.
+- Invoiced in instalments on delivery of named deliverables, payable within 30 days.
