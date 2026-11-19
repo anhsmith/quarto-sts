@@ -35,7 +35,7 @@
 
 #let sts-svg(source, ..args) = image(bytes(source), format: "svg", ..args)
 
-// 12000 -> "12,000"
+// 9999 -> "9,999"
 #let sts-thousands(x) = {
   let digits = str(int(calc.round(x)))
   let n = digits.len()

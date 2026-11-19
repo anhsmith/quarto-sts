@@ -75,12 +75,12 @@ local function as_list(value)
   return { value }
 end
 
--- A number, with or without thousands separators ("1,200"), is a daily rate.
+-- A number, with or without thousands separators ("9,999"), is a daily rate.
 -- Text with no digits, such as "x,xxx", is a placeholder printed in place of
 -- every fee and of the rate, for a template or an example. Text with digits
--- that is not a number, such as "1.200,00", is an error, so that a mistyped
+-- that is not a number, such as "9.999,99", is an error, so that a mistyped
 -- rate cannot print as the fee of every package.
--- "1,200" -> 1200 and "12,000.50" -> 12000.5; nil unless every comma
+-- "9,999" -> 9999 and "9,999.99" -> 9999.99; nil unless every comma
 -- separates a group of three digits
 local function with_separators(s)
   local whole, fraction = s:match("^([%d,]+)(%.?%d*)$")
@@ -110,7 +110,7 @@ local function rate_value(rate)
     return tostring(n)
   end
   if s:find("%d") then
-    abort("rate must be a number, such as 1200 or \"1,200\", " ..
+    abort("rate must be a number, such as 9999 or \"9,999\", " ..
       "or placeholder text with no digits, such as \"x,xxx\", not '" .. s .. "'")
   end
   return to_string_literal(rate)
