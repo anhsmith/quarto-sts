@@ -23,6 +23,10 @@ $presentation-title-slide-text-align: right;
 // section-title slides (level-1 headings), set to the size of the deck title
 $presentation-h1-font-size: 1.6em;
 
+// slide titles (level-2 headings); the reveal.js default of 1.6em is too large
+// beside the reduced body text that `smaller: true` gives
+$presentation-h2-font-size: 1.15em;
+
 
 /*-- scss:rules --*/
 
