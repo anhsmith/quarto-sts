@@ -107,7 +107,25 @@
         </else>
       </choose>
       <choose>
-        <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <if type="report" match="any">
+          <text macro="title" prefix=" " suffix="."/>
+          <group delimiter=" " prefix=" " suffix=".">
+            <choose>
+              <if variable="genre">
+                <text variable="genre"/>
+              </if>
+              <else>
+                <text variable="collection-title"/>
+              </else>
+            </choose>
+            <text variable="number"/>
+          </group>
+          <group delimiter=" " prefix=" " suffix=".">
+            <text macro="editor"/>
+            <text macro="publisher"/>
+          </group>
+        </if>
+        <else-if type="bill book graphic legal_case legislation motion_picture song" match="any">
           <group delimiter=" ">
             <group delimiter=", " prefix=" " suffix=".">
               <text macro="title" font-style="normal"/>
@@ -118,7 +136,7 @@
               <text macro="publisher"/>
             </group>
           </group>
-        </if>
+        </else-if>
         <else-if type="chapter paper-conference" match="any">
           <text macro="title" font-style="normal" suffix="."/>
           <group prefix=" " suffix=" ">
